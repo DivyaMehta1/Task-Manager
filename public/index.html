@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="" <link rel="stylesheet" href="style.css">
+    <title>TaskManager</title>
+    <script async defer src="script.js"></script>
+</head>
+
+<body>
+    <html>
+
+    <head>
+        <div class="container">
+            <div class="col-4">
+                <div class="row-sm-4">
+                </div>
+                <div class="row-2 w-25">
+
+                    <h2 class="title">Task Manager</h2>
+
+                    <form action="/todos " method="POST" id="myform">
+                        <div class="form-group">
+                            <label for="Title">Title</label>
+                            <input type="title" class="form-control" name="todo[title]" placeholder="Enter title for task">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="description" class="form-control" name="todo[description]" placeholder="Description">
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <!--radio-->
+                            <label for="Title">Priority</label> &nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <input type="radio" class="form-check-input" id="materialUnchecked" name="todo[priority]">
+                            <label class="form-check-label" for="materialUnchecked">High</label>
+
+                            <input type="radio" class="form-check-input" id="materialChecked" name="todo[priority]" checked>
+                            <label class="form-check-label" for="materialChecked">Medium</label>
+
+                            <input type="radio" class="form-check-input" id="materialUnchecked" name="todo[priority]">
+                            <label class="form-check-label" for="materialUnchecked">Low</label>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="Title">DueDate</label>
+                            <input type="title" class="form-control" id="title" name="todo[DueDate]" aria-describedby="emailHelp" placeholder="Enter title for task">
+                        </div>
+                        <div class="form-group">
+                            <!--select-->
+                            <label for="Title">Status</label>
+                            <input type="priority" class="form-control" id="priority" name="todo[status]" aria-describedby="emailHelp" placeholder="Enter title for task">
+                        </div>
+                        <div class="form-group">
+                            <!--textarea-->
+                            <label for="comment">Notes:</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+
+                        <button class="btn btn-success " type="submit " id="sumit " value="Submit ">Add Task</button>
+                    </form>
+
+
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+
+
+        <div id="tasks">
+            <select class="custom-select">
+                            <option selected>Sort By</option>
+                            <option value="1">Priority</option>
+                            <option value="2">Status(Complete/incomplete)</option>
+                            <option value="3">DueDate</option>
+                          </select>
+            <div>
+                <ul id="myUL">
+                    <a href=""></a>
+                </ul>
+            </div>
+        </div>
+        </section>
+        <!-- we create a table for the inputted notes -->
+        <!-- <table class="table ">
+                <thead class="thead-dark ">
+                    <tr>
+                        <th scope="col ">#</th>
+                        <th scope="col ">NOTES</th>
+                        <th scope="col ">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Title.map((i, index) => { %>
+                        <tr>
+                            <th scope="row ">
+                                <%= index+1 %>
+                            </th>
+                            <td>
+                                <%= i.body %>
+                            </td>
+                            <td>
+                                <form action='<%= /deleteNote/ +i.id%>' method="POST ">
+                                    <button type="submit " class="btn btn-danger ">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <% }) %>
+
+
+                </tbody>
+            </table>
+        -->
+        <div class="footer ">
+            <p>Footer for todos</p>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
+</body>
+
+</html>
