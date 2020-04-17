@@ -97,12 +97,15 @@ async function addTodosList() {
 }
 
 async function addNewTodoJson(title, description, duedate, status, priority, note) {
+
     const resp = await fetch('/todos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(title, description, duedate, status, priority, note)
+        body: JSON.stringify({ title, description, duedate, status, priority, note })
     })
-    getTaskPrioritySorted()
+
+    addTodosList()
+
 }
