@@ -14,8 +14,11 @@ app.use('/todos', todoRoute)
 
 db.sync()
     .then(() => {
-        app.listen(3000)
-        console.log("Server started")
+        const PORT = process.env.PORT || 3000;
+        app.listen(PORT, () => {
+            console.log(`Our app is running on port ${ PORT }`);
+        });
+
     })
     .catch((err) => {
         console.error(err)
