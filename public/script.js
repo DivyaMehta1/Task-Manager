@@ -1,4 +1,4 @@
-//window.onload = getTaskPrioritySorted()
+window.onload = getTaskPrioritySorted()
 var list = document.querySelector('ul');
 var submit = document.getElementById('submit');
 
