@@ -2,7 +2,7 @@ const express = require('express')
 
 const { db } = require('./db')
 const todoRoute = require('./routes/todos')
-
+const port = process.env.PORT || 8080
 const app = express()
 
 app.use(express.urlencoded({ extended: true }))
@@ -14,11 +14,8 @@ app.use('/todos', todoRoute)
 
 db.sync()
     .then(() => {
-        const PORT = process.env.PORT || 3000;
-        app.listen(PORT, () => {
-            console.log(`Our app is running on port ${ PORT }`);
-        });
-
+        app.listen(port)
+        console.log('server running at port' + port)
     })
     .catch((err) => {
         console.error(err)
